@@ -31,14 +31,16 @@ app.get('/api/hello', function (req, res) {
 
 // Request Header Parser Microservice
 app.get('/api/whoami', (req, res) => {
-
-console.log(JSON.stringify(req.headers));
-
-
-  res.json({ greeting: 'hello API' });
-
-
-
+  const ipaddress = req.headers['x-forwarded-for'];
+  const language = req.headers['accept-language'];
+  const software = req.headers['user-agent'];
+  
+  res.json({
+    "ipaddress": ipaddress,
+    "language": language,
+    "software": software
+  });
+  
 });
 
 
