@@ -25,6 +25,10 @@ app.get('/api/hello', function (req, res) {
 });
 
 
+//####################################################
+// Request Header Parser Microservice - 2024-10-04
+//####################################################
+
 // Request Header Parser Microservice
 app.get('/api/whoami', (req, res) => {
   const ipaddress = req.headers['x-forwarded-for'];
@@ -37,7 +41,7 @@ app.get('/api/whoami', (req, res) => {
     "software": software
   });
   
-  });
+});
 
 
 // listen for requests :)
